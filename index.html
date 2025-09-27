@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VedaNova - Ayurvedic Diet Management Software</title>
+    
+    <link rel="icon" type="image/x-icon" href="vedanova.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="vedanova.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="vedanova.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+        <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="video-container">
+                <iframe id="demoVideoPlayer" width="853" heighttps://youtu.be/US2hTRg_m941" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+
+    <header class="header">
+        <div class="logo">VedaNova 🕊️</div>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="dashboard.html">Dashboard</a> 
+            <a href="#features">Features</a>
+            <a href="pricing.html">Pricing</a> <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href ="helpus.html">Help Us</a>
+        </nav>
+        <div class="auth-buttons">
+            <button class="btn btn-secondary" onclick="window.location.href='login.html'">Login</button>
+            <button class="btn btn-primary" onclick="window.location.href='signup.html'">Sign Up</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="animate-text">VedaNova: Where Ancient Wisdom Meets Modern Nutrition.</h1>
+                <p class="animate-text delay-1">The Comprehensive Cloud-Based Practice Management & Nutrient Analysis Software for Ayurvedic Dietitians.</p>
+                <div class="hero-actions animate-text delay-2">
+                    <a href="#" class="btn btn-primary btn-large" onclick="alert('Playing Demo Video...')">
+                        <i class="fas fa-video"></i> Watch a Demo Video
+                    </a>
+                    <a href="#features" class="btn btn-secondary btn-large">Explore Features</a>
+                </div>
+            </div>
+            <div class="hero-image-mock animate-in">
+                <i class="fas fa-leaf icon-large"></i>
+                <div class="mock-card">
+                    **Vata Diet Plan:** **35%** Reduction Goal
+                </div>
+                <div class="mock-card mock-card-small">
+                    **Nutrient Score:** 92/100
+                </div>
+            </div>
+        </section>
+
+        <section class="philosophy-section">
+            <div class="philosophy-content">
+                <h2>Our Philosophy</h2>
+                <h3>Embracing the Timeless Wisdom of Ayurveda</h3>
+                <p>At IVAC, we honour Ayurveda as a living tradition—a sacred science of life that nurtures the harmony of mind, body, and spirit. Rooted in principles that have guided humanity for millennia, our approach is thoughtfully personalized to recognize the unique constitution of each individual. By blending authentic Ayurvedic practices with gentle modern insights, we create a haven where healing transcends the physical and illuminates the soul.</p>
+            </div>
+            <div class="philosophy-image">
+                <img src="https://www.shutterstock.com/image-vector/holistic-medicine-concept-glowing-futuristic-260nw-1426296758.jpg" alt="Ayurvedic herbs and holistic healing" class="animate-image">
+            </div>
+        </section>
+        
+        <section class="concept-section">
+            <h2 class="section-title">Fundamental Pillars of Healing</h2>
+            <p class="section-subtitle">Our software is built on these foundational concepts of Ayurvedic science.</p>
+            
+            <div class="concept-grid">
+            
+                <div class="concept-card">
+                    <img src="https://soulvacation.in/wp-content/uploads/2025/07/Dinacharya-the-Ayurvedic-Daily-Routine-1024x683.png" alt="Dincharya - Daily Routine">
+                    <h3>Dincharya (Daily Routine)</h3>
+                    <p>
+                        The prescribed **daily schedule** for a balanced life. We help plan meals and habits aligned with the patient's biological clock .
+                    </p>
+                </div>
+            
+                <div class="concept-card">
+                    <img src="https://healingtheory.in/cdn/shop/articles/ritucharya.jpg?v=1684318989" alt="Ritucharya - Seasonal Regimen">
+                    <h3>Ritucharya (Seasonal Regimen)</h3>
+                    <p>
+                        Guidance on **diet and lifestyle** adjustments according to the **six Indian seasons** to maintain  throughout the year.
+                    </p>
+                </div>
+            
+                <div class="concept-card">
+                    <img src="https://omvedicheritage.com.sg/wp/wp-content/uploads/2020/07/Agni-1024x1024.jpg" alt="Agni - Digestive Fire">
+                    <h3>Agni (Digestive Fire)</h3>
+                    <p>
+                        The core **metabolic fire** responsible for digestion and nutrient assimilation. Our plans focus on prescribing  that optimizes and strengthens.
+                    </p>
+                </div>
+            
+            </div>
+        </section>
+        
+        <section class="problem-statement" id="about">
+            <h2>Solving the Ayurvedic Dietary Gap</h2>
+            <div class="problem-grid">
+                <div class="problem-item">
+                    <i class="fas fa-pencil-alt"></i>
+                    <h3>The Manual Burden</h3>
+                    <p>Current diet charts are handwritten, leading to **inefficiency** and potential transcription **inaccuracies** in busy hospital settings.</p>
+                </div>
+                <div class="problem-item">
+                    <i class="fas fa-flask"></i>
+                    <h3>Nutrient Misalignment</h3>
+                    <p>Existing software focuses only on **Western macros/micros**, completely ignoring vital Ayurvedic concepts like *Rasa, Virya (Hot/Cold), and Guna*.</p>
+                </div>
+                <div class="problem-item">
+                    <i class="fas fa-cogs"></i>
+                    <h3>The VedaNova Solution</h3>
+                    <p>We integrate **8,000+ foods** with both scientific nutrient data (kcal, protein) and proprietary Ayurvedic metrics, ensuring **holistic, compliant care**.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="service-section">
+            <h2 class="section-title">VedaNova Core Services</h2>
+            <p class="section-subtitle">Tools designed specifically for the modern Ayurvedic practitioner.</p>
+            
+            <div class="service-grid">
+            
+                <div class="service-card">
+                    <img src="https://ayurvedarejuvenation.com/wp-content/uploads/2017/11/bigstock-Ayurveda-vector-illustration-95752616.jpg" alt="Doshic Assessment"> 
+                    <h3>Precision Doshic Assessment</h3>
+                    <p>
+                        Detailed profile analysis based on **Vata, Pitta, and Kapha** to ensure the right dietary and lifestyle recommendations are generated.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <img src="ChatGPT Image Sep 27, 2025, 01_59_14 AM.png" alt="Ayurvedic Diet Plan">
+                    <h3>Dynamic Diet Planning</h3>
+                    <p>
+                        Instantly generate **personalized, dosha-pacifying** diet plans using our comprehensive, filterable food database.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://amoeboids.com/wp-content/uploads/2019/10/5-Tips-for-Project-Managers-To-Track-Project-Progress-Banner.png" alt="Reports and Analytics">
+                    <h3>Progress Tracking & Reports</h3>
+                    <p>
+                        Monitor patient progress visually and generate professional, clear reports on  and  over time.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-section" id="features">
+            <h2>Key VedaNova Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Integrated Nutrient Engine</h3>
+                    <p>Automatically calculates **calories, macros, and Ayurvedic properties (Rasa, Virya, Vipaka)** simultaneously for every meal.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users-cog"></i>
+                    <h3>Patient Management Suite</h3>
+                    <p>Secure profiles with critical metrics: age, gender, bowel movements, water intake, and **Doshic Imbalance Tracking**.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Dynamic Food Database</h3>
+                    <p>A searchable database of **8,000+ food items**, covering Indian, multicultural, and international cuisines.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Automated Chart Generation</h3>
+                    <p>Generates printable, clear, and **nutritionally balanced, Ayurveda-compliant** diet charts instantly.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section" id="contact">
+            <h2>Ready to Revolutionize Your Practice?</h2>
+            <a href="signup.html" class="btn btn-primary btn-large cta-button">Start Your Free Trial Today</a>
+        </section>
+    </main>
+
+    <footer class="detailed-footer">
+        <div class="footer-container">
+            
+            <div class="footer-column footer-branding">
+                <div class="footer-logo">
+                    <i class="fas fa-magic" style="color:#d953f7; font-size:1.5em; margin-right: 5px;"></i>
+                    VedaNova
+                </div>
+                <p>Comprehensive Ayurvedic Practice Management & Nutrient Analysis Software</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Product</h3>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                     <li><a href="#">Medicine Database</a></li>
+                    <li><a href="dashboard.html">Food Database</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="helpus.html">Help Center</a></li>
+                    <li><a href="#">Documentation </a></li>
+                    <li><a href="#">Training</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p><i class="fas fa-envelope"></i> vedanova29@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +91 1234567890</p>
+                <p><i class="fas fa-map-marker-alt"></i> Jaipur, Rajasthan</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 VedaNova. All rights reserved.</p>
+            <div>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

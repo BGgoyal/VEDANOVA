@@ -1,0 +1,940 @@
+/* General Reset and Base Styles (Global) */
+:root {
+    --primary-color: #00796B;
+    /* Teal/Forest Green - Sophisticated Ayurveda */
+    --secondary-color: #FFB300;
+    /* Amber/Gold - Accent/Vibrant */
+    --background-color: #f8f8f8;
+    --card-color: #ffffff;
+    --text-color: #263238;
+    /* Dark Slate */
+    --footer-bg: #1a1a2e;
+    /* Dark Navy for Footer */
+    --footer-text: #f0f0f0;
+    --shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- Header & Navigation (Global) --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: var(--card-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 900;
+    color: var(--primary-color);
+}
+
+.header nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.header nav a:hover,
+.header nav a.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* --- Buttons (Global) --- */
+.btn {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #004d40;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-large {
+    padding: 14px 25px;
+    font-size: 1.1em;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.btn-large i {
+    margin-right: 8px;
+}
+
+/* --- Home Page Specific Styles (index.html) --- */
+.hero-section {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 60px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #e0f2f1 0%, #ffffff 100%);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 60%;
+}
+
+.hero-content h1 {
+    font-size: 3.2em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.4em;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-image-mock {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 40%;
+}
+
+.icon-large {
+    font-size: 10em;
+    color: var(--secondary-color);
+    opacity: 0.2;
+    transform: rotate(-15deg);
+}
+
+.mock-card {
+    position: absolute;
+    background-color: var(--card-color);
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    font-weight: 600;
+    white-space: nowrap;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.mock-card:nth-child(2) {
+    top: 20px;
+    left: 10%;
+    border-left: 5px solid var(--primary-color);
+}
+
+.mock-card-small {
+    bottom: 40px;
+    right: 5%;
+    font-size: 0.9em;
+    opacity: 0.8;
+    background-color: #fff8e1;
+    border-bottom: 3px solid var(--secondary-color);
+    animation: slideIn 1s ease-out;
+}
+
+/* Home Page Sections */
+.problem-statement,
+.features-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.problem-statement h2,
+.features-section h2 {
+    font-size: 2.5em;
+    color: var(--text-color);
+    margin-bottom: 40px;
+}
+
+.problem-grid {
+    display: flex;
+    gap: 30px;
+    text-align: left;
+}
+
+.problem-item {
+    background: var(--card-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    flex: 1;
+    transition: transform 0.3s;
+}
+
+.problem-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.problem-item i {
+    font-size: 2em;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.problem-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.feature-card {
+    background: var(--card-color);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid var(--primary-color);
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.feature-card:hover {
+    background-color: #e0f2f1;
+}
+
+.feature-card i {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.cta-section {
+    text-align: center;
+    padding: 60px 20px;
+    margin: 80px 0;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.cta-section h2 {
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+.cta-button {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+}
+
+.cta-button:hover {
+    background-color: #ffc107;
+    transform: scale(1.05);
+}
+
+/* Keyframe Animations (Home Page) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-text {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+.delay-1 {
+    animation-delay: 0.3s;
+}
+
+.delay-2 {
+    animation-delay: 0.6s;
+}
+
+.animate-in {
+    animation: fadeIn 1s ease-out 0.8s forwards;
+    opacity: 0;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* --- NEW: Philosophy Section Styles --- */
+.philosophy-section {
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    text-align: left;
+}
+
+.philosophy-content {
+    flex: 1;
+    max-width: 55%;
+}
+
+.philosophy-content h2 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.philosophy-content h3 {
+    font-size: 1.8em;
+    color: var(--text-color);
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+.philosophy-content p {
+    font-size: 1.1em;
+    color: #444;
+    line-height: 1.7;
+}
+
+.philosophy-image {
+    flex: 1;
+    max-width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.philosophy-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: transform 0.5s ease;
+}
+
+.animate-image {
+    animation: scaleIn 1s ease-out forwards;
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+@keyframes scaleIn {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* --- DETAILED FOOTER STYLES (Global) --- */
+.detailed-footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 40px 0 10px 0;
+    font-size: 0.95em;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    border-bottom: 1px solid #333;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 180px;
+}
+
+.footer-branding {
+    max-width: 300px;
+}
+
+.footer-logo {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-branding p {
+    margin-bottom: 20px;
+    line-height: 1.4;
+    color: #ccc;
+}
+
+.footer-column h3 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-column a:hover {
+    color: #d953f7;
+}
+
+.footer-column p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #ccc;
+}
+
+.footer-column i {
+    margin-right: 10px;
+    color: #ccc;
+}
+
+.social-links a {
+    color: #ccc;
+    font-size: 1.2em;
+    margin-right: 15px;
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: #d953f7;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #888;
+}
+
+.footer-bottom a {
+    color: #888;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.2s;
+}
+
+.footer-bottom a:hover {
+    color: white;
+}
+
+
+/* --- Dashboard Specific Styles (Applied to dashboard.html) --- */
+.dashboard-header {
+    /* If you want the dashboard header to be slightly different, define it here */
+}
+
+.container {
+    display: flex;
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.sidebar {
+    flex: 0 0 300px;
+    background: var(--card-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-right: 20px;
+    height: fit-content;
+}
+
+.content-area {
+    flex-grow: 1;
+}
+
+.sidebar h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+}
+
+.patient-list {
+    list-style: none;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+}
+
+.patient-list li {
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    transition: background-color 0.2s, color 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+}
+
+.patient-list li:hover:not(.active) {
+    background-color: #e8f5e9;
+}
+
+.patient-list li.active {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 121, 107, 0.4);
+    /* Primary color shadow */
+}
+
+.status-dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid #fff;
+}
+
+.healthy {
+    background-color: #4CAF50;
+}
+
+.caution {
+    background-color: #FF9800;
+}
+
+.stable {
+    background-color: #03A9F4;
+}
+
+.card {
+    background: var(--card-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+.content-area h1 {
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    font-size: 1.8em;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    text-align: center;
+}
+
+.stat-card i {
+    font-size: 3.5em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.patient-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px dashed #ccc;
+    border-radius: 6px;
+}
+
+.action-buttons {
+    margin-bottom: 20px;
+}
+
+/* Diet Table */
+.diet-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+.diet-table th,
+.diet-table td {
+    border: 1px solid #eee;
+    padding: 12px;
+    text-align: left;
+}
+
+.diet-table th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.diet-table tr:nth-child(even) {
+    background-color: #fcfcfc;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group select,
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.form-group select {
+    width: auto;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.suggestions {
+    border: 1px solid #eee;
+    border-top: none;
+    max-height: 150px;
+    overflow-y: auto;
+    background-color: white;
+}
+
+.nutrient-summary {
+    padding: 15px;
+    background-color: #e0f2f1;
+    border-left: 4px solid var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .header {
+        padding: 15px 20px;
+    }
+
+    .header nav {
+        display: none;
+    }
+
+    /* Hide main nav on mobile */
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .hero-content,
+    .hero-image-mock {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .problem-grid,
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .problem-grid {
+        flex-direction: column;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .sidebar {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .patient-summary {
+        grid-template-columns: 1fr;
+    }
+
+    /* Philosophy section responsive */
+    .philosophy-section {
+        flex-direction: column;
+    }
+
+    .philosophy-content,
+    .philosophy-image {
+        max-width: 100%;
+    }
+
+    .philosophy-image {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-column {
+        min-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .footer-column p {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+ /* ========================================================= */
+/* --- VedaNova: New Home Page Section Styles (INDEX.HTML) --- */
+/* ========================================================= */
+
+/* General Section Styling */
+.concept-section, .service-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fcfcfc; /* Light background for separation */
+}
+
+.service-section {
+    background-color: #ffffff;
+}
+
+.section-title {
+    color: #00796B; /* Dark Green */
+    font-size: 2.2em;
+    margin-bottom: 5px;
+}
+
+.section-subtitle {
+    color:  #263238;
+    font-size: 1.1em;
+    margin-bottom: 40px;
+}
+
+/* Grid Layout for Cards */
+.concept-grid, .service-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Card Common Styling */
+.concept-card, .service-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    width: 320px; /* Fixed width for consistency */
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
+}
+
+.concept-card:hover, .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Image/Icon Styling */
+.concept-card img, .service-card img {
+    width: 100%;
+    height: 200px; /* Fixed height for image consistency */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+}
+
+/* Card Headings */
+.concept-card h3, .service-card h3 {
+    color: #00796B; /* Brownish Orange accent */
+    margin-top: 0;
+    font-size: 1.4em;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 5px;
+}
+
+/* Card Paragraph Text */
+.concept-card p, .service-card p {
+    color: #263238;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+/* Separator Style (Used for the <hr> element) */
+.separator {
+    border: 0; 
+    height: 1px; 
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0),(#00796B), rgba(0, 0, 0, 0)); 
+    max-width: 70%; 
+    margin: 40px auto;
+}
+
+/* --- Responsive Adjustments (Optional but Recommended) --- */
+@media (max-width: 768px) {
+    .concept-card, .service-card {
+        width: 80%; /* Takes up more width on smaller screens */
+        max-width: 400px;
+    }
+
+    .section-title {
+        font-size: 1.8em;
+    }
+}

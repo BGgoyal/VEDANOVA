@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VedaNova - Pricing</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .pricing-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #004d40 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            margin-bottom: 50px;
+        }
+
+        .pricing-hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .pricing-hero p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+        }
+
+        .price-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+            width: 350px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid transparent;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .price-card.featured {
+            border-top-color: var(--secondary-color);
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .price-card h3 {
+            font-size: 2em;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .price-card .price {
+            font-size: 3.5em;
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+
+        .price-card .price sup {
+            font-size: 0.5em;
+            vertical-align: super;
+        }
+
+        .price-card .price span {
+            font-size: 0.5em;
+            font-weight: normal;
+            color: #777;
+        }
+
+        .price-card ul {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 30px;
+            flex-grow: 1;
+            /* Allows list to take up available space */
+        }
+
+        .price-card ul li {
+            margin-bottom: 12px;
+            color: #555;
+            font-size: 1.05em;
+        }
+
+        .price-card ul li i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .price-card .btn {
+            margin-top: auto;
+            /* Pushes button to the bottom */
+            width: 100%;
+            padding: 15px 25px;
+        }
+
+        .price-card.featured .btn-primary {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .price-card.featured .btn-primary:hover {
+            background-color: #ffc107;
+        }
+
+
+        @media (max-width: 768px) {
+            .pricing-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .price-card {
+                width: 90%;
+                max-width: 400px;
+            }
+        }
+
+        /* (Rest of the internal styles for pricing cards remain the same) */
+
+        /* FAQ Section Styles */
+        .faq-section {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+        }
+
+        .faq-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            background-color: #f9f9f9;
+            padding: 18px 25px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-color);
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #f0f0f0;
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .faq-answer p {
+            padding: 15px 0;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            /* Sufficient height for smooth transition */
+            padding: 15px 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">VedaNova 🕊️</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="index.html#features">Features</a>
+            <a href="#" class="active">Pricing</a> <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+        <div class="auth-buttons">
+            <button class="btn btn-secondary" onclick="window.location.href='login.html'">Login</button>
+            <button class="btn btn-primary" onclick="window.location.href='signup.html'">Sign Up</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="pricing-hero">
+            <h1>Simple, Transparent Pricing</h1>
+            <p>Choose the plan that best fits your Ayurvedic practice, from individual practitioners to growing clinics.
+                No hidden fees, just pure value.</p>
+        </section>
+
+        <section class="pricing-container">
+            <div class="price-card">
+                <h3>Basic Plan</h3>
+                <div class="price"><sup>₹</sup>99<span>/month</span></div>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Up to 5 Active Patients</li>
+                    <li><i class="fas fa-check-circle"></i> Basic Patient Management</li>
+                    <li><i class="fas fa-check-circle"></i> Access to 2000+ Food Database</li>
+                    <li><i class="fas fa-check-circle"></i> Standard Diet Chart Generation</li>
+                    <li><i class="fas fa-times-circle" style="color:#e74c3c;"></i> Advanced Analytics</li>
+                    <li><i class="fas fa-times-circle" style="color:#e74c3c;"></i> Priority Support</li>
+                </ul>
+                <a href="signup.html" class="btn btn-secondary">Get Started</a>
+            </div>
+
+            <div class="price-card featured">
+                <h3>Professional Plan</h3>
+                <div class="price"><sup>₹</sup>199<span>/month</span></div>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Up to 50 Active Patients</li>
+                    <li><i class="fas fa-check-circle"></i> Advanced Patient Management</li>
+                    <li><i class="fas fa-check-circle"></i> **Full 8000+ Food Database Access**</li>
+                    <li><i class="fas fa-check-circle"></i> Automated Chart Generation (Ayurveda Compliant)</li>
+                    <li><i class="fas fa-check-circle"></i> Basic Reports & Analytics</li>
+                    <li><i class="fas fa-check-circle"></i> Standard Customer Support</li>
+                </ul>
+                <a href="signup.html" class="btn btn-primary">Choose Plan</a>
+            </div>
+
+            <div class="price-card">
+                <h3>Clinic Plan</h3>
+                <div class="price"><sup>₹</sup>299<span>/month</span></div>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Unlimited Patients</li>
+                    <li><i class="fas fa-check-circle"></i> Comprehensive Patient Management</li>
+                    <li><i class="fas fa-check-circle"></i> **Full 8000+ Food Database Access**</li>
+                    <li><i class="fas fa-check-circle"></i> Custom Chart Templates</li>
+                    <li><i class="fas fa-check-circle"></i> Advanced AI-Powered Analytics</li>
+                    <li><i class="fas fa-check-circle"></i> Dedicated Priority Support</li>
+                </ul>
+                <a href="signup.html" class="btn btn-secondary">Contact Sales</a>
+            </div>
+            <section class="faq-section">
+                <h2>Frequently Asked Questions (FAQ)</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is the difference between the Basic and Professional Food Database access?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The **Basic Plan** includes a curated list of ~2000 common Indian and Ayurvedic foods. The
+                            **Professional and Clinic Plans** unlock the full **8000+ database**, which includes global
+                            foods, rare herbs, and extensive macro/micro and detailed Guna/Virya/Vipaka analysis.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you offer a free trial period?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer a 14-day free trial on our **Professional Plan**. You can sign up via the 'Sign
+                            Up' button to explore all the features, including the 8000+ database, risk-free.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I upgrade or downgrade my plan later?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. You can change your subscription plan at any time directly from your dashboard's
+                            billing section. Upgrades are immediate, and downgrades take effect at the start of your
+                            next billing cycle.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is the data secure and HIPAA/GDPR compliant?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>VedaNova uses industry-leading encryption and security protocols. We adhere to all major data
+                            protection regulations to ensure patient privacy and compliance in your practice.</p>
+                    </div>
+                </div>
+
+
+
+            </section>
+    </main>
+
+    <footer class="detailed-footer">
+        <div class="footer-container">
+
+            <div class="footer-column footer-branding">
+                <div class="footer-logo">
+                    <i class="fas fa-magic" style="color:#d953f7; font-size:1.5em; margin-right: 5px;"></i>
+                    VedaNova
+                </div>
+                <p>Comprehensive Ayurvedic Practice Management & Nutrient Analysis Software</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Product</h3>
+                <ul>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Medicine Database</a></li>
+                    <li><a href="#">Food Database</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Training</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p><i class="fas fa-envelope"></i> vedanova29@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +91 1234567890</p>
+                <p><i class="fas fa-map-marker-alt"></i> Jaipur, Rajasthan</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 VedaNova. All rights reserved.</p>
+            <div>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close all other active items
+                    faqItems.forEach(i => {
+                        if (i !== item && i.classList.contains('active')) {
+                            i.classList.remove('active');
+                        }
+                    });
+
+                    // Toggle the current item
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Mock function required for Food Database link in footer
+            window.openFoodDatabaseModal = function () {
+                alert('Food Database link clicked. This would open the 8000+ Database modal on the Dashboard page.');
+                // Note: Since this is pricing.html, we just show an alert. 
+                // On dashboard.html, this function would open the modal.
+            };
+
+        });
+    </script>
+
+</body>
+
+</html>
