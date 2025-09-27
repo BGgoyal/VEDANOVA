@@ -111,6 +111,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+// script.js mein
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    // .active class jodega ya hatayega
+    navLinks.classList.toggle('active');
+}
 
 // --- Simple Greeting/Console Log for Developers ---
 console.log("VedaNova: Where Ancient Wisdom Meets Modern Nutrition. (Page Loaded)");
@@ -122,4 +128,5 @@ console.log("VedaNova: Where Ancient Wisdom Meets Modern Nutrition. (Page Loaded
 // Basic CSS for suggestion list (you would add this to styles.css)
 // .suggestions { border: 1px solid #ddd; border-top: none; max-height: 150px; overflow-y: auto; position: absolute; width: 90%; background: white; z-index: 10; }
 // .suggestion-item { padding: 8px; cursor: pointer; }
+
 // .suggestion-item:hover { background-color: #f0f0f0; }
