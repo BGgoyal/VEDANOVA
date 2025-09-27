@@ -937,4 +937,56 @@ body {
     .section-title {
         font-size: 1.8em;
     }
+
+}
+/* Media Query: Jab screen 768px se choti ho (yani mobile ya tablet) */
+@media (max-width: 768px) {
+    
+    /* Navigation Bar (Navbar) mein changes */
+    .navbar {
+        /* Flex direction ko column kar dete hain taki sab cheezein upar-neeche aa jaayein */
+        flex-direction: column; 
+        align-items: flex-start; /* Items ko left mein set karein */
+        padding: 10px;
+    }
+
+    /* Links (Home, Dashboard, Pricing) ko hide karna */
+    .nav-links {
+        display: none; /* Mobile par by default links ko chupa dete hain */
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    /* Jab user hamburger icon par click karega, toh .active class judegi */
+    .nav-links.active {
+        display: flex; /* Aur links dikhne lagenge */
+    }
+
+    /* Har link ko poori width do */
+    .nav-links a {
+        margin: 5px 0;
+        padding: 8px 10px;
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid #eee; /* Links ke beech mein line */
+    }
+
+    /* Hamburger icon dikhana */
+    .menu-icon {
+        display: block; /* Hamburger icon sirf mobile par dikhega */
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        cursor: pointer;
+    }
+    
+    /* Agar aapko website ka content bhi badalna hai */
+    .main-content {
+        padding: 10px;
+    }
+    
+    /* Agar elements side-by-side hain toh unhe stack kar do */
+    .some-flex-container {
+        flex-direction: column;
+    }
 }
